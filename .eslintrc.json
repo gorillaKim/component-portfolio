@@ -74,7 +74,6 @@
     "react/require-default-props": "off",
     "require-jsdoc": "off",
     "react/no-unused-prop-types": "warn",
-    "sort-keys-fix/sort-keys-fix": "error",
     "semi": "off",
     "no-shadow": "off"
   },
