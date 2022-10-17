@@ -1,19 +1,16 @@
-import Button, { ButtonType } from "./Button";
+import React from "react"
+import Button, {ButtonType} from "./Button"
 
 export default {
-  title: "버튼",
   component: Button,
-  parameters: {
-    componentSubtitle: "Button 컴포넌트",
-  },
-};
+  parameters: {componentSubtitle: "Button 컴포넌트"},
+  title: "버튼"
+}
 
-export const defaultButton = () => {
-  return <Button>default 버튼</Button>;
-};
-export const primaryButton = () => {
-  return <Button theme={ButtonType.PRIMARY}>primary 버튼</Button>;
-};
-export const secondaryButton = () => {
-  return <Button theme={ButtonType.SECONDARY}>secondary 버튼</Button>;
-};
+export const Default = () => <Button>default 버튼</Button>
+export const Primary = () => (
+  <Button theme={ButtonType.PRIMARY}>primary 버튼</Button>
+)
+export const Secondary = () => (
+  <Button theme={ButtonType.SECONDARY}>secondary 버튼</Button>
+)
