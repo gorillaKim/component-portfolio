@@ -12,9 +12,9 @@
     "sourceMap": false,
     "outDir": "./dist",
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-    "removeComments": true
+    "removeComments": true,
+    "baseUrl": "src",
   },
   "include": [
     "./src",

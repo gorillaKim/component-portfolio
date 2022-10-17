@@ -36,17 +36,9 @@
     ],
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-unused-vars": "error",
-    "array-bracket-spacing": [
-      "error",
-      "always",
-      {
-        "arraysInArrays": false,
-        "objectsInArrays": false
-      }
-    ],
-    "brace-style": ["error", "allman"],
+    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
     "comma-dangle": ["error", "never"],
-    "eol-last": ["error", "never"],
+    "eol-last": "off",
     "import/extensions": "off",
     "import/named": "off",
     "import/no-anonymous-default-export": "off",
@@ -54,44 +46,15 @@
     "import/no-extraneous-dependencies": "off",
     "import/no-named-as-default": "off",
     "import/no-unresolved": "off",
-    "import/order": [
-      "error",
-      {
-        "alphabetize": {
-          "caseInsensitive": true,
-          "order": "asc"
-        },
-        "groups": [
-          "external",
-          "builtin",
-          "internal",
-          "sibling",
-          "parent",
-          "index"
-        ],
-        "newlines-between": "always"
-      }
-    ],
-    "indent": ["error", "tab"],
+    "import/order": "off",
+    "indent": ["error", 2],
     "jsx-a11y/control-has-associated-label": "off",
-    "jsx-quotes": ["error", "prefer-single"],
+    "jsx-quotes": ["error", "prefer-double"],
     "linebreak-style": "off",
     "max-len": "off",
     "no-restricted-exports": "off",
     "no-tabs": ["error", { "allowIndentationTabs": true }],
     "no-unused-vars": "off",
-    "object-curly-newline": [
-      "error",
-      {
-        "ExportDeclaration": "never",
-        "ImportDeclaration": "never",
-        "ObjectExpression": {
-          "minProperties": 3,
-          "multiline": true
-        },
-        "ObjectPattern": "never"
-      }
-    ],
     "react-hooks/exhaustive-deps": "warn",
     "react/button-has-type": "off",
     "react/destructuring-assignment": "off",
@@ -104,25 +67,16 @@
       }
     ],
     "react/jsx-filename-extension": "off",
-    "react/jsx-indent": ["error", "tab"],
+    "react/jsx-indent": ["error", 2],
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-sort-props": [
-      "error",
-      {
-        "callbacksLast": true,
-        "ignoreCase": true,
-        "multiline": "last",
-        "noSortAlphabetically": false,
-        "reservedFirst": false,
-        "shorthandFirst": false,
-        "shorthandLast": true
-      }
-    ],
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
     "require-jsdoc": "off",
-    "sort-keys-fix/sort-keys-fix": "error"
+    "react/no-unused-prop-types": "warn",
+    "sort-keys-fix/sort-keys-fix": "error",
+    "semi": "off",
+    "no-shadow": "off"
   },
   "settings": {
     "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx", ".js"] },
