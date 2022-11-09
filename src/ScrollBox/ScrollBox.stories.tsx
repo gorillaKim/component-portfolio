@@ -27,7 +27,15 @@ export const Default = () => (
   </ScrollBox>
 )
 
-export const Custom = () => (
+export const Custom1 = () => (
+  <ScrollBox width={300}>
+    {Array.from({length: 30}, (v, i) => (
+      <Item key={i}>{i} 번째 게시글 입니다.</Item>
+    ))}
+  </ScrollBox>
+)
+
+export const Custom2 = () => (
   <ScrollBox width={900}>
     {Array.from({length: 30}, (v, i) => (
       <Item key={i}>{i} 번째 게시글 입니다.</Item>
