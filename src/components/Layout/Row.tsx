@@ -30,10 +30,9 @@ export const getRowGutterStyle = (
 }
 
 export interface RowProps extends HTMLAttributes<HTMLDivElement> {
-  direction?: CSSProperties["flexDirection"]
   gutter?: number | [number, number]
-  justify?: CSSProperties["justifyContent"]
   align?: CSSProperties["alignItems"]
+  justify?: CSSProperties["justifyContent"]
 }
 
 const Row: FC<RowProps> = ({
