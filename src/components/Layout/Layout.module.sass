@@ -1,0 +1,56 @@
+$base-width: 24
+div
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.Row
+  display: flex
+  flex-flow: row wrap
+  min-width: 0
+
+
+.Col
+  display: block
+  position: relative
+  max-width: 100%
+  min-height: 1px
+  text-align: center
+
+  &.span1
+    flex: 0 0 calc(100% / $base-width)
+    max-width: calc(100% / $base-width)
+  &.span2
+    flex: 0 0 calc(100% / $base-width * 2)
+    max-width: calc(100% / $base-width * 2)
+  &.span3
+    flex: 0 0 calc(100% / $base-width * 3)
+    max-width: calc(100% / $base-width * 3)
+  &.span4
+    flex: 0 0 calc(100% / $base-width * 4)
+    max-width: calc(100% / $base-width * 4)
+  &.span5
+    flex: 0 0 calc(100% / $base-width * 5)
+    max-width: calc(100% / $base-width * 5)
+  &.span6
+    flex: 0 0 25%
+    max-width: 25%
+  &.span7
+    flex: 0 0 calc(100% / $base-width * 7)
+    max-width: calc(100% / $base-width * 7)
+  &.span8
+    flex: 0 0 calc(100% / $base-width * 8)
+    max-width: calc(100% / $base-width * 8)
+  &.span9
+    flex: 0 0 calc(100% / $base-width * 9)
+    max-width: calc(100% / $base-width * 9)
+  &.span10
+    flex: 0 0 calc(100% / $base-width * 10)
+    max-width: calc(100% / $base-width * 10)
+  &.span11
+    flex: 0 0 calc(100% / $base-width * 11)
+    max-width: calc(100% / $base-width * 11)
+  &.span12
+    flex: 0 0 100%
+    max-width: 100%
+
