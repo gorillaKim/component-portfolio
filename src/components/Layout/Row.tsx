@@ -6,7 +6,7 @@ import React, {
   HTMLAttributes,
   isValidElement
 } from "react"
-import styles from "./Layout.module.sass"
+import styles from "./Grid.module.sass"
 import classNames from "classnames"
 
 export const getRowGutterStyle = (
