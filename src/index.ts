@@ -1,2 +1,2 @@
-import * as Button from "./Button/Button"
-import * as ScrollBox from "./ScrollBox/ScrollBox"
+import * as Button from "./components/Button/Button"
+import * as ScrollBox from "./components/ScrollBox/ScrollBox"

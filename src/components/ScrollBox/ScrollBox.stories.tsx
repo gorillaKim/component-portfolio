@@ -1,4 +1,4 @@
-import React, {FC} from "react"
+import {FC, ReactNode} from "react"
 import ScrollBox from "./ScrollBox"
 
 export default {
@@ -6,7 +6,7 @@ export default {
   parameters: {componentSubtitle: "ScrollBox 컴포넌트"},
   title: "스크롤 박스"
 }
-const Item: FC<{children: React.ReactNode}> = ({children}) => (
+const Item: FC<{children: ReactNode}> = ({children}) => (
   <span
     style={{
       border: "1px solid black",

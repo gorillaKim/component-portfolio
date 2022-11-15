@@ -7,7 +7,7 @@ import React, {
   useRef,
   useLayoutEffect
 } from "react"
-import useScrollEvent from "../hooks/animations/useScrollEvent"
+import useScrollEvent from "../../hooks/animations/useScrollEvent"
 import classNames from "classnames"
 import styles from "./ScrollBox.module.sass"
 
