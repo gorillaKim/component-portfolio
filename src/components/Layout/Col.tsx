@@ -1,5 +1,5 @@
 import React, {CSSProperties, FC, HTMLAttributes} from "react"
-import styles from "./Layout.module.sass"
+import styles from "./Grid.module.sass"
 import classNames from "classnames"
 
 export const getColGutterStyle = (
@@ -22,20 +22,33 @@ export const getColGutterStyle = (
 
 export interface ColProps extends HTMLAttributes<HTMLDivElement> {
   span?: number
+  order?: number
   gutter?: number | [number, number]
 }
 
-const Col: FC<ColProps> = ({span, gutter, children, style, ...restProps}) => (
-  <div
-    className={classNames(styles.Col, {[styles[`span${span}`]]: span})}
-    style={{
-      ...style,
-      ...(gutter && getColGutterStyle(gutter))
-    }}
-    {...restProps}
-  >
-    {children}
-  </div>
-)
+const Col: FC<ColProps> = ({
+  span,
+  order,
+  gutter,
+  children,
+  style,
+  ...restProps
+}) => {
+  const customStyle: CSSProperties = {
+    ...style,
+    order: order ?? "unset",
+    ...(gutter && getColGutterStyle(gutter))
+  }
+
+  return (
+    <div
+      className={classNames(styles.Col, {[styles[`span${span}`]]: span})}
+      style={customStyle}
+      {...restProps}
+    >
+      {children}
+    </div>
+  )
+}
 
 export default Col
