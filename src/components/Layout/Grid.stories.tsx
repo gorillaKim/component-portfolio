@@ -94,7 +94,6 @@ export const Align = () => (
         <hr />
       </Col>
       <Col>
-        asd
         <h2>CENTER</h2>
       </Col>
     </Row>
