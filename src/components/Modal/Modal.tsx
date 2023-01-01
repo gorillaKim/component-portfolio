@@ -1,8 +1,9 @@
 import React, {CSSProperties, FC, ReactNode, useEffect} from "react"
-import styles from "./Modal.module.sass"
+import {createPortal} from "react-dom"
+import useDelayVisible from "../../hooks/animations/useDelayVisible"
 import classNames from "classnames"
 import Close from "../Icons/Close"
-import useDelayVisible from "../../hooks/animations/useDelayVisible"
+import styles from "./Modal.module.sass"
 
 export interface ModalProps {
   visible?: boolean
@@ -50,7 +51,7 @@ const Modal: FC<ModalProps> = ({
     }
   }, [visible])
 
-  return (
+  return createPortal(
     <>
       {/* eslint-disable-next-line */}
       <div
@@ -81,7 +82,8 @@ const Modal: FC<ModalProps> = ({
           {footer}
         </div>
       </div>
-    </>
+    </>,
+    document.body
   )
 }
 
