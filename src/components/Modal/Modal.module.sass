@@ -26,6 +26,7 @@ div.Modal
   min-width: 300px
   min-height: 300px
   max-width: 90%
+  max-height: 90%
   padding: $gap-size
 
   background-color: rgb(255, 255, 255)
@@ -46,6 +47,8 @@ div.Modal
     flex-direction: column
     justify-content: flex-start
     row-gap: $gap-size
+    width: 100%
+    height: 100%
 
     div.Title
       display: flex
@@ -57,7 +60,8 @@ div.Modal
 
     div.Children
       width: 100%
-      height: 100%
+      height: inherit
+      max-height: calc(90vh - 28px * 4 - 26px - 22px)
       min-height: 150px
       overflow: auto
 
