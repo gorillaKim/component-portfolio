@@ -34,8 +34,12 @@ div.Modal
   border-radius: 5px
   box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15)
 
+  opacity: 0
+  transition: opacity 0.2s linear
   &.active
     display: flex
+  &.visuallyActive
+    opacity: 1
 
   .ModalBody
     display: flex
