@@ -58,6 +58,7 @@ export const LongChildren = () => {
         title="타이틀 입니다."
         visible={visible}
         onClose={() => setVisible(false)}
+        width={700}
         footer={
           <div style={{display: "flex", gap: 14}}>
             <button onClick={() => setVisible(false)}>취소</button>
@@ -65,7 +66,9 @@ export const LongChildren = () => {
           </div>
         }
       >
-        <div style={{width: 1700, height: "100%"}}>테스트 모달 입니다.</div>
+        {Array.from({length: 300}, (_, index) => (
+          <div key={`key_${index}`}>테스트 모달 입니다.</div>
+        ))}
       </Modal>
     </div>
   )

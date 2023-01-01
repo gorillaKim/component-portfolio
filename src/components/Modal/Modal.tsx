@@ -11,6 +11,7 @@ export interface ModalProps {
   extraTitle?: ReactNode
   footer?: ReactNode
   onClose?: () => void
+  width?: CSSProperties["width"]
   style?: CSSProperties
   bodyStyle?: CSSProperties
   footerStyle?: CSSProperties
@@ -26,6 +27,7 @@ const Modal: FC<ModalProps> = ({
   extraTitle,
   footer,
   onClose,
+  width = 500,
   style,
   bodyStyle,
   footerStyle,
@@ -83,7 +85,8 @@ const Modal: FC<ModalProps> = ({
         })}
         style={{
           transitionTimingFunction: animation,
-          transitionDuration: animationDuration
+          transitionDuration: animationDuration,
+          width
         }}
       >
         <div className={styles.ModalBody} style={bodyStyle}>
