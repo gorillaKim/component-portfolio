@@ -65,7 +65,7 @@ export const LongChildren = () => {
           </div>
         }
       >
-        <div>
+        <div style={{width: 700}}>
           {Array.from({length: 300}, (_, index) => (
             <div key={`key_${index}`}>테스트 모달 입니다.</div>
           ))}
