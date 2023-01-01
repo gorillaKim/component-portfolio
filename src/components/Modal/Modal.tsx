@@ -1,4 +1,4 @@
-import React, {CSSProperties, FC, ReactNode} from "react"
+import React, {CSSProperties, FC, ReactNode, useEffect} from "react"
 import styles from "./Modal.module.sass"
 import classNames from "classnames"
 import Close from "../Icons/Close"
@@ -28,9 +28,20 @@ const Modal: FC<ModalProps> = ({
 }) => {
   const handleOnClose = (): void => onClose?.()
 
+  useEffect(() => {
+    const cssProperty = "overflow"
+    if (visible) {
+      document.body.style[cssProperty] = "hidden"
+    } else {
+      document.body.style.removeProperty(cssProperty)
+    }
+  }, [visible])
+
   return (
     <>
+      {/* eslint-disable-next-line */}
       <div
+        role="button"
         className={classNames(styles.ModalBackDrop, {[styles.active]: visible})}
         onClick={handleOnClose}
       />
