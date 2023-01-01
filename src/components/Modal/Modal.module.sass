@@ -1,4 +1,8 @@
-.ModalBackDrop
+$gap-size: 28px
+
+
+div.ModalBackDrop
+  z-index: 998
   position: absolute
   top: 0
   left: 0
@@ -6,21 +10,54 @@
   height: 100vh
   background-color: rgba(0, 0, 0, 0.4)
   display: none
+
   &.active
     display: block
 
-  .Modal
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translateX(-50%) translateY(-50%)
+div.Modal
+  z-index: 999
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%)
 
-    width: 500px
-    height: 500px
-    padding: 28px
+  display: none
+  flex-direction: column
+  row-gap: $gap-size
+  justify-content: space-between
 
-    background-color: rgb(255, 255, 255)
-    border-radius: 10px
-    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15)
+  width: 500px
+  height: 500px
+  padding: $gap-size
+
+  background-color: rgb(255, 255, 255)
+  border-radius: 5px
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15)
+
+  &.active
+    display: flex
+
+  .ModalBody
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    row-gap: $gap-size
+    width: 100%
+
+    .Title
+      display: flex
+      gap: $gap-size
+      justify-content: space-between
+
+      font-size: 18px
+      font-weight: 500
+
+  .Footer
+    display: flex
+    row-gap: $gap-size
+    justify-content: flex-end
+    align-items: center
+
+
 
 
