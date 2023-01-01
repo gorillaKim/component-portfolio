@@ -11,7 +11,7 @@ export const Default = () => {
   const [visible, setVisible] = useState<boolean>(false)
 
   return (
-    <div style={{height: 700}}>
+    <>
       <button onClick={() => setVisible(true)}>모달 오픈</button>
       <Modal
         title="타이틀 입니다."
@@ -21,7 +21,7 @@ export const Default = () => {
       >
         테스트 모달 입니다.
       </Modal>
-    </div>
+    </>
   )
 }
 
@@ -29,7 +29,7 @@ export const WithFooterButtons = () => {
   const [visible, setVisible] = useState<boolean>(false)
 
   return (
-    <div style={{height: 700}}>
+    <>
       <button onClick={() => setVisible(true)}>모달 오픈</button>
       <Modal
         title="타이틀 입니다."
@@ -44,7 +44,7 @@ export const WithFooterButtons = () => {
       >
         테스트 모달 입니다.
       </Modal>
-    </div>
+    </>
   )
 }
 
@@ -52,7 +52,7 @@ export const LongChildren = () => {
   const [visible, setVisible] = useState<boolean>(false)
 
   return (
-    <div style={{height: 700}}>
+    <>
       <button onClick={() => setVisible(true)}>모달 오픈</button>
       <Modal
         title="타이틀 입니다."
@@ -70,7 +70,7 @@ export const LongChildren = () => {
           <div key={`key_${index}`}>테스트 모달 입니다.</div>
         ))}
       </Modal>
-    </div>
+    </>
   )
 }
 
@@ -78,7 +78,7 @@ export const WithAnimation = () => {
   const [visible, setVisible] = useState<boolean>(false)
 
   return (
-    <div style={{height: 700}}>
+    <>
       <button onClick={() => setVisible(true)}>모달 오픈</button>
       <Modal
         title="타이틀 입니다."
@@ -95,6 +95,6 @@ export const WithAnimation = () => {
       >
         테스트 모달 입니다.
       </Modal>
-    </div>
+    </>
   )
 }
