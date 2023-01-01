@@ -19,12 +19,12 @@ interface useDelayVisibleReturns {
 }
 
 const useDelayVisible = ({
-  hidden = false,
+  hidden = true,
   delays
 }: useDelayVisibleProps): useDelayVisibleReturns => {
   const isFirstRender = useRef<boolean>(true)
-  const [visuallyHidden, setVisuallyHidden] = useState<boolean>(false)
-  const [displayNone, setDisplayNone] = useState<boolean>(false)
+  const [visuallyHidden, setVisuallyHidden] = useState<boolean>(true)
+  const [displayNone, setDisplayNone] = useState<boolean>(true)
   const delayTime = {
     ...DELAYS,
     delays
