@@ -48,6 +48,29 @@ export const WithFooterButtons = () => {
   )
 }
 
+export const LongChildren = () => {
+  const [visible, setVisible] = useState<boolean>(false)
+
+  return (
+    <div style={{height: 700}}>
+      <button onClick={() => setVisible(true)}>모달 오픈</button>
+      <Modal
+        title="타이틀 입니다."
+        visible={visible}
+        onClose={() => setVisible(false)}
+        footer={
+          <div style={{display: "flex", gap: 14}}>
+            <button onClick={() => setVisible(false)}>취소</button>
+            <button>확인</button>
+          </div>
+        }
+      >
+        <div style={{width: 1700, height: "100%"}}>테스트 모달 입니다.</div>
+      </Modal>
+    </div>
+  )
+}
+
 export const WithAnimation = () => {
   const [visible, setVisible] = useState<boolean>(false)
 

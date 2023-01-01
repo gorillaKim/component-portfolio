@@ -1,4 +1,4 @@
-import React, {CSSProperties, FC, ReactNode, useEffect} from "react"
+import React, {CSSProperties, FC, ReactNode, useEffect, useRef} from "react"
 import {createPortal} from "react-dom"
 import useDelayVisible from "../../hooks/animations/useDelayVisible"
 import classNames from "classnames"
@@ -12,6 +12,7 @@ export interface ModalProps {
   footer?: ReactNode
   onClose?: () => void
   style?: CSSProperties
+  bodyStyle?: CSSProperties
   footerStyle?: CSSProperties
   animation?: CSSProperties["transitionTimingFunction"]
   animationDuration?: CSSProperties["transitionDuration"]
@@ -20,18 +21,20 @@ export interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = ({
-  visible,
+  visible = false,
   title,
   extraTitle,
   footer,
   onClose,
   style,
+  bodyStyle,
   footerStyle,
   animation = "ease-out",
   animationDuration = "0.1s",
   className,
   children
 }) => {
+  const $modalRef = useRef<HTMLDivElement>(null)
   const handleOnClose = (): void => onClose?.()
   const {displayNone, visuallyHidden} = useDelayVisible({
     hidden: !visible,
@@ -51,8 +54,19 @@ const Modal: FC<ModalProps> = ({
     }
   }, [visible])
 
+  useEffect(() => {
+    if ($modalRef.current && isVisuallyActive) {
+      $modalRef.current.style.left = `calc(50% - ${
+        $modalRef.current.clientWidth / 2
+      }px )`
+      $modalRef.current.style.top = `calc(50% - ${
+        $modalRef.current.clientHeight / 2
+      }px )`
+    }
+  }, [isVisuallyActive])
+
   return createPortal(
-    <>
+    <div>
       {/* eslint-disable-next-line */}
       <div
         role="button"
@@ -62,6 +76,7 @@ const Modal: FC<ModalProps> = ({
         onClick={handleOnClose}
       />
       <div
+        ref={$modalRef}
         className={classNames(styles.Modal, {
           [styles.active]: isActive,
           [styles.visuallyActive]: isVisuallyActive
@@ -71,18 +86,20 @@ const Modal: FC<ModalProps> = ({
           transitionDuration: animationDuration
         }}
       >
-        <div className={classNames(styles.ModalBody, className)} style={style}>
+        <div className={styles.ModalBody} style={bodyStyle}>
           <div className={styles.Title}>
             <span>{title}</span>
             <div>{extraTitle || <Close onClick={handleOnClose} />}</div>
           </div>
-          <div>{children}</div>
+          <div style={style} className={classNames(styles.Children, className)}>
+            {children}
+          </div>
         </div>
         <div className={styles.Footer} style={footerStyle}>
           {footer}
         </div>
       </div>
-    </>,
+    </div>,
     document.body
   )
 }
