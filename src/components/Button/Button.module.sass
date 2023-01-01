@@ -1,18 +1,42 @@
+$bg-primary: #03a9f4
+$bg-secondary: #a0ddf9
+
+$border-primary: #03a9f4
+$border-secondary: #a0ddf9
+
+$sm-padding: 8px
+$default-padding: 12px
+$lg-padding: 24px
+
+$sm-font-size: 10px
+$default-font-size: 12px
+$lg-font-size: 16px
+
 .default
-  padding: 8px
+  padding: $default-padding
   background: white
   border: white
   border-radius: 4px
+  cursor: pointer
+  font-size: $default-font-size
+  padding: $default-padding
+
+  &.sm
+    font-size: $sm-font-size
+    padding: $sm-padding
+  &.lg
+    font-size: $lg-font-size
+    padding: $lg-padding
 
 
 .primary
-  background: #03a9f4
-  border: #03a9f4
+  background: $bg-primary
+  border: $border-primary
   color: white
 
 
 .secondary
-  background: #a0ddf9
-  border: #a0ddf9
+  background: $bg-secondary
+  border: $border-secondary
   color: white
 
