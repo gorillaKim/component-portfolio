@@ -1,9 +1,23 @@
+// normal
+$bg-default: #fff
 $bg-primary: #03a9f4
 $bg-secondary: #a0ddf9
 
+$color-default: #fff
+
+$border-default: #d9d9d9
 $border-primary: #03a9f4
 $border-secondary: #a0ddf9
 
+// hover
+$hov-bg-primary: #4096ff
+$hov-bg-secondary: #a0ddf9
+
+// active
+$active-bg-primary: #0958d9
+$active-bg-secondary: #a0ddf9
+
+// size
 $sm-padding: 8px
 $default-padding: 12px
 $lg-padding: 24px
@@ -14,12 +28,27 @@ $lg-font-size: 16px
 
 .default
   padding: $default-padding
-  background: white
-  border: white
+  background: $bg-default
+  border: 1px solid $border-default
   border-radius: 4px
   cursor: pointer
   font-size: $default-font-size
   padding: $default-padding
+  box-shadow: 0 2px 0 rgb(0 0 0 / 2%)
+  transition: all .2s cubic-bezier(.645,.045,.355,1)
+
+  &:hover
+    border-color: $hov-bg-primary
+    color: $hov-bg-primary
+  &:active
+    border-color: $active-bg-primary
+    color: $active-bg-primary
+  &:disabled
+    cursor: not-allowed
+    border-color: $border-default
+    color: rgba(0,0,0,.25)
+    background-color: rgba(0,0,0,.04)
+    box-shadow: none
 
   &.sm
     font-size: $sm-font-size
@@ -31,12 +60,39 @@ $lg-font-size: 16px
 
 .primary
   background: $bg-primary
-  border: $border-primary
-  color: white
+  border-color: $border-primary
+  color: $color-default
+  &:hover
+    background: $hov-bg-primary
+    color: $color-default
+  &:active
+    background: $active-bg-primary
+    color: $color-default
 
 
 .secondary
   background: $bg-secondary
-  border: $border-secondary
-  color: white
+  border-color: $border-secondary
+  color: $color-default
+  &:hover
+    background: $hov-bg-secondary
+    color: $color-default
+  &:active
+    background: $active-bg-secondary
+    color: $color-default
 
+.borderNone
+  border-color: transparent
+  &:hover, &:active
+    border-color: transparent
+
+.custom
+  filter: brightness(1)
+  &:hover, &:active
+    background: initial
+    color: initial
+    border-color: initial
+  &:hover
+    filter: brightness(0.95)
+  &:active
+    filter: brightness(0.8)
