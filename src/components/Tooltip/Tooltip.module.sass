@@ -1,0 +1,62 @@
+.TooltipContainer
+  position: relative
+  width: fit-content
+  height: fit-content
+
+  &:hover, &:active
+    > .Tooltip
+      display: block
+
+  > .Tooltip
+    display: none
+    position: absolute
+    z-index: 999
+
+    .TooltipInner
+      z-index: 2
+      min-width: 32px
+      min-height: 32px
+      padding: 6px 8px
+      color: #fff
+      text-align: start
+      text-decoration: none
+      word-wrap: break-word
+      background-color: #262626
+      border-radius: 6px
+      box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%)
+
+    .TooltipTriangle
+      position: absolute
+      z-index: 1
+      display: block
+      border-radius: 0 0 2px
+      pointer-events: none
+      width: 8px
+      height: 8px
+      overflow: hidden
+      transform: rotate(45deg) translateX(-5.5px)
+      background-color: #262626
+      &.top, &.topLeft, &.topRight
+        bottom: -20%
+        left: calc(50% - 1px)
+      &.right, &.rightTop, &.rightBottom
+        top: calc(50% + 1px)
+        left: 1px
+      &.left, &.leftTop, &.leftBottom
+        top: calc(50% + 1px)
+        right: -8px
+      &.bottom, &.bottomLeft, &.bottomRight
+        top: -2%
+        left: calc(50% - 1px)
+
+
+
+@keyframes FadeInOut
+  0%
+    opacity: 0
+  40%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 1
