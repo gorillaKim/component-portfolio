@@ -47,7 +47,6 @@
     "import/no-named-as-default": "off",
     "import/no-unresolved": "off",
     "import/order": "off",
-    "indent": ["error", 2],
     "jsx-a11y/control-has-associated-label": "off",
     "jsx-quotes": ["error", "prefer-double"],
     "linebreak-style": "off",
