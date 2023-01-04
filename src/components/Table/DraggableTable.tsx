@@ -10,6 +10,7 @@ import {
 } from "@tanstack/react-table"
 import DraggableColumnHeader from "./DraggableColumnHeader/DraggableColumnHeader"
 import styles from "./DraggableTable.module.sass"
+import classNames from "classnames"
 
 export type DraggableTableProps<T> = {
   data: Array<T>
@@ -35,10 +36,15 @@ const DraggableTable: FC<DraggableTableProps<any>> = ({
     data,
     columns,
     state: {
-      columnOrder
+      columnOrder,
+      columnPinning: {
+        left: ["firstName"]
+      }
     },
     onColumnOrderChange: setColumnOrder,
     getCoreRowModel: getCoreRowModel(),
+    columnResizeMode: "onChange",
+    enableColumnResizing: true,
     debugTable: true,
     debugHeaders: true,
     debugColumns: true
@@ -78,7 +84,10 @@ const DraggableTable: FC<DraggableTableProps<any>> = ({
             {table.getRowModel().rows.map(row => (
               <tr key={row.id}>
                 {row.getVisibleCells().map(cell => (
-                  <td key={cell.id}>
+                  <td
+                    key={cell.id}
+                    className={classNames({[styles.sticky]: false})}
+                  >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}
@@ -103,6 +112,7 @@ const DraggableTable: FC<DraggableTableProps<any>> = ({
           </tfoot>
         </table>
       </div>
+      <pre>{JSON.stringify(table.getState().columnPinning, null, 2)}</pre>
     </DndProvider>
   )
 }
