@@ -1,20 +1,18 @@
-.ColumnHeader
-  display: inline-flex
-  flex-wrap: nowrap
-  flex-direction: row
-  justify-content: space-between
-  align-items: center
-  padding: 2px 0
-  .PreviewWrapper
-    width: 100%
-    height: 30px
-    display: flex
-    align-items: flex-start
-    justify-content: start
+th
+  .ColumnHeader
+    position: relative
+    display: inline-flex
+    flex-wrap: nowrap
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    padding: 2px 0 2px
+
     .Preview
       width: 100%
       padding: 4px 10px
-      border-radius: 5px
+      border: 1.5px solid transparent
+      border-radius: 4px
       .Title
         width: 100%
         display: inline-flex
@@ -23,5 +21,41 @@
         column-gap: 8px
         font-weight: 600
         font-size: 16px
-        .Emoji
-          width: 10px
+
+  &:last-child > .resizerContainer
+    display: none
+
+// Resizer Style
+div.resizerContainer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  position: absolute
+  top: 0
+  right: 0
+  transform: translateX(50%)
+  z-index: 999
+
+  width: 36px
+  height: 100%
+  margin: 0 auto
+
+  .resizer
+    height: 20px
+    width: 3px
+    margin-left: 3px
+    opacity: 0
+    background: rgba(0, 0, 0, 0.5)
+    cursor: col-resize
+    user-select: none
+    touch-action: none
+
+  &.isResizing > .resizer
+    background: blue
+    opacity: 1
+
+  &:hover > .resizer
+    opacity: 1
+
+

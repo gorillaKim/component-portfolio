@@ -16,6 +16,7 @@ export const Draggable = () => {
       id: "firstName",
       header: "First Name",
       cell: info => info.getValue(),
+      enablePinning: true,
       footer: props => props.column.id
     },
     {
